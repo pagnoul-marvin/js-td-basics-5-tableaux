@@ -13,3 +13,36 @@
 // 7. Utilisez la fonction 'calculateurPourboire' pour calculer les pourboires pour chaque facture du tableau 'factures' et ajoutez-les au tableau 'pourboires'.
 // 8. Pour chaque facture, calculez le montant final payé en ajoutant le montant de la facture au montant du pourboire, puis ajoutez-le au tableau 'montantsFinaux'.
 // 9. Affichez les tableaux 'pourboires' et 'montantsFinaux' dans la console pour voir les résultats.
+
+
+const factures = [20, 150, 400];
+const calculateurPourboire = facture => {
+    if (facture < 50) {
+        return facture * 0.2;
+    }
+    if ((facture >= 50) && (facture < 200)) {
+        return facture * 0.15;
+    }
+    if (facture >= 200) {
+        return facture * 0.10;
+    }
+}
+
+const pourboires = [];
+const montantsFinaux = [];
+
+pourboires.push(calculateurPourboire(factures[0]));
+pourboires.push(calculateurPourboire(factures[1]));
+pourboires.push(calculateurPourboire(factures[2]));
+
+montantsFinaux.push(pourboires[0] + factures[0]);
+montantsFinaux.push(pourboires[1] + factures[1]);
+montantsFinaux.push(pourboires[2] + factures[2]);
+
+console.log(pourboires);
+console.log(montantsFinaux);
+
+
+
+
+
