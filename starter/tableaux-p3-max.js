@@ -11,3 +11,21 @@ Aide :
   - Si la valeur courante est supérieure à 'max', elle devient le nouveau 'max'.
 - Affichez le résultat.
 */
+
+
+const nombres = [11, 3, 7, 2, 90, 10];
+console.log(nombres);
+console.log("La plus grande valeur de mon tableau est :");
+let max = nombres[0];
+nombres.forEach(nombres=> {
+    if (nombres > max) {
+        max = nombres;
+        console.log(max);
+    } else {
+        console.log(nombres[0]);
+    }
+});
+
+
+
+

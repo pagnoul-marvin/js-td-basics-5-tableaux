@@ -15,8 +15,30 @@ Version alternative (avec BONUS) :
 4. Affichez le message final : "… + … + … = …".
 */
 
+const nombres = [11, 3, 7, 2, 9, 10];
+console.log(`Voici mon tableau de nombres ${nombres}`);
+
+console.log("La somme des nombres de mon tableau est");
+console.log("Avec for each :");
+nombres.forEach(nombres => {
+    console.log(nombres+nombres);
+})
+
+console.log("Avec for of :");
+for (let nombre of nombres) {
+    console.log(nombre+nombre);
+}
 
 
+console.log("Bonus");
+let message = "";
+let somme = 0;
+console.log(message);
+console.log("Avec for of :");
+for (let element of nombres) {
+    console.log(element+element);
+}
 
-
-
+for (somme; somme<nombres.length; somme++) {
+    message = `${nombres[somme]} + ${nombres[somme]} = ${nombres[somme] + nombres[somme]}`;
+}

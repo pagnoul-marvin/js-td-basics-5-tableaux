@@ -7,14 +7,58 @@ TABLEAUX - PRÉPA 4 : Date valide - version 3
 - Utilisez 'isValid' pour décider si votre date est valide avant d'afficher votre message dans la console.
 */
 
-// Fonction pour vérifier si une année est bissextile
-function isBissextile(annee) {
-    // Code pour déterminer si 'annee' est bissextile
+let isValid = true;
+
+function valid(jour, annee, mois) {
+    jour = parseInt(prompt('Entrez le jour'));
+    mois = parseInt(prompt('Entrez le mois'));
+    annee = parseInt(prompt('Entrez le année'));
+    let isBissextile = false;
+
+    function bissextile() {
+        if (((annee % 4 === 0) && (!annee % 100 === 0)) || annee % 400 === 0) {
+            isBissextile = true;
+        }
+    }
+    bissextile();
+    if (isNaN(jour) || isNaN(mois) || isNaN(annee)) {
+        isValid = false;
+    }
+    if (jour < 1 || jour > 31) {
+        isValid = false;
+    }
+    if (mois < 1 || mois > 12) {
+        isValid = false;
+    }
+    if (annee < 1) {
+        isValid = false;
+    }
+
+    switch (mois) {
+        case 2 :
+            if (isBissextile === true) {
+                if (jour > 29) {
+                    isValid = false;
+                }
+            } else {
+                if (jour > 28) {
+                    isValid = false;
+                }
+            }
+            break;
+        case 4 :
+        case 6 :
+        case 9 :
+        case 11 :
+            if (jour > 30) {
+                isValid = false;
+            }
+    }
 }
 
-// Fonction pour vérifier si une date est valide
-function isValid(jour, mois, annee) {
-    // Code pour vérifier si la date (jour, mois, annee) est valide
+valid();
+if (isValid === true) {
+    console.log(`Date valide`);
+} else {
+    console.log(`Ce n'est pas une date valide`);
 }
-
-// Utilisez 'isValid' pour vérifier si une date est valide avant d'afficher un message dans la console
