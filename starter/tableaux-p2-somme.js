@@ -17,28 +17,44 @@ Version alternative (avec BONUS) :
 
 const nombres = [11, 3, 7, 2, 9, 10];
 console.log(`Voici mon tableau de nombres ${nombres}`);
+let somme = 0;
 
 console.log("La somme des nombres de mon tableau est");
 console.log("Avec for each :");
+/*
 nombres.forEach(nombres => {
-    console.log(nombres+nombres);
-})
-
+    somme += nombres;
+});
+console.log(somme);
+*/
+/*
 console.log("Avec for of :");
 for (let nombre of nombres) {
-    console.log(nombre+nombre);
+    somme += nombre;
 }
-
+console.log(somme);
 
 console.log("Bonus");
+/*
+ */
 let message = "";
-let somme = 0;
-console.log(message);
 console.log("Avec for of :");
-for (let element of nombres) {
-    console.log(element+element);
+/*
+for (const valeur of nombres) {
+    somme += valeur;
+    message += `${valeur} + `;
+}
+message = message.slice(0, -2);
+message = `${message} = ${somme}`;
+console.log(message);
+ */
+console.log("Avec for :");
+
+for (let i = 0; i < nombres.length; i++) {
+    somme+=nombres[i];
+    message+=`${nombres[i]} +`;
 }
 
-for (somme; somme<nombres.length; somme++) {
-    message = `${nombres[somme]} + ${nombres[somme]} = ${nombres[somme] + nombres[somme]}`;
-}
+message = message.slice(0, -2);
+message = `${message} = ${somme}`;
+console.log(message);

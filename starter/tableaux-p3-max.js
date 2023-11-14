@@ -12,19 +12,16 @@ Aide :
 - Affichez le résultat.
 */
 
-
 const nombres = [11, 3, 7, 2, 90, 10];
 console.log(nombres);
 console.log("La plus grande valeur de mon tableau est :");
 let max = nombres[0];
-nombres.forEach(nombres=> {
-    if (nombres > max) {
-        max = nombres;
-        console.log(max);
-    } else {
-        console.log(nombres[0]);
+nombres.forEach(nombre =>{
+    if (nombre > max) {
+        max = nombre;
     }
 });
+console.log(max);
 
 
 

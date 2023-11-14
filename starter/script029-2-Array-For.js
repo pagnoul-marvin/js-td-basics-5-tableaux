@@ -48,7 +48,7 @@ while (test3<john.length) {
 }
 
 //    3°) avec une boucle for of
-console.log("Avec boucle for of : ")
+console.log("Avec boucle for of : ");
 for (let element of john) {
     console.log(element);
 }
@@ -68,7 +68,7 @@ const carres = [];
 
 nombres.forEach(nombres => {
     carres.push(nombres*nombres);
-})
+});
 
 // - Affichez "Voici mon tableau de nombres au carré :" suivi du tableau contenant les carrés.
 
