@@ -52,9 +52,9 @@ console.log("Avec for :");
 
 for (let i = 0; i < nombres.length; i++) {
     somme+=nombres[i];
-    message+=`${nombres[i]} +`;
+    message+=`${nombres[i]} + `;
 }
 
-message = message.slice(0, -2);
+message = message.slice(0, -3);
 message = `${message} = ${somme}`;
 console.log(message);
